@@ -60,6 +60,7 @@ def limpa_lista(lista):
         i = 0
         x = lista[i]
     lista.pop(i)  # Remove o cabeçalho da lista
+    lista.pop()  # Remove elemento duplicado
     lista_limpa = []
     # Limpar e converter cada item da lista
     for item in lista:
