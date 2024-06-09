@@ -5,12 +5,12 @@ import sqlite3
 
 
 # Classe personalizada de HTMLParser para analisar e extrair dados da tabela HTML
-class StockDataParser(HTMLParser):
+class AcoesParser(HTMLParser):
     def __init__(self):
         super().__init__()
         self.in_table_row = False
         self.current_data = {}
-        self.stock_data = []
+        self.acoes = []
 
     # Método chamado quando uma tag de abertura é encontrada
     def handle_starttag(self, tag, attrs):
@@ -36,7 +36,7 @@ class StockDataParser(HTMLParser):
         if tag == 'tr':
             self.in_table_row = False
             if self.current_data:
-                self.stock_data.append(self.current_data)
+                self.acoes.append(self.current_data)
 
 
 # Função para converter preços de string para float
@@ -84,15 +84,15 @@ with urllib.request.urlopen(req) as response:
     html = response.read().decode()
 
 # Análise do HTML e extração dos dados
-parser = StockDataParser()
+parser = AcoesParser()
 parser.feed(html)
 
 print("Lista a partir do HTML inicial:")
-for stock in parser.stock_data:
+for stock in parser.acoes:
     print(stock)
 
 # Copia os dados extraídos para uma nova lista
-bovespa = parser.stock_data.copy()
+bovespa = parser.acoes.copy()
 
 # Limpa e formata os dados extraídos
 bovespa = limpa_lista(bovespa)

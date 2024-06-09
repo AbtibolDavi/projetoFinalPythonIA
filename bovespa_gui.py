@@ -3,7 +3,7 @@ import sqlite3
 import tkinter as tk
 from tkinter import ttk
 import matplotlib.pyplot as plt
-from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
 
 # Conecta ao banco de dados SQLite
 conn = sqlite3.connect('bovespa.db')
@@ -56,6 +56,8 @@ plt.tight_layout()
 
 # Cria um canvas para exibir o gráfico
 canvas = FigureCanvasTkAgg(fig, master=frame_table)
+# Adiciona uma barra de ferramentas ao gráfico
+NavigationToolbar2Tk(canvas)
 # Obtem o widget do canvas e empacota no frame
 canvas.get_tk_widget().pack(fill=tk.BOTH, expand=True)
 # Desenha o grafico no canvas
