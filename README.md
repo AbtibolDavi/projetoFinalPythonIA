@@ -1,8 +1,8 @@
 # Monitor de Ações da Bovespa com Python
 
-![Status](https://img.shields.io/badge/status-concluído-green)
-![Python](https://img.shields.io/badge/python-3.x-blue)
-![License](https://img.shields.io/badge/license-MIT-lightgrey)
+![Status](https://img.shields.io/badge/Status-Concluído-4CAF50?style=for-the-badge)
+![Linguagem](https://img.shields.io/badge/Linguagem-Python-3776AB?style=for-the-badge)
+![Licença](https://img.shields.io/badge/Licença-MIT-orange?style=for-the-badge)
 
 Este projeto consiste em uma aplicação de desktop que extrai dados de ações da Bovespa do portal ADVFN, os armazena em um banco de dados local e os exibe em uma interface gráfica com uma tabela e um gráfico.
 
